@@ -5,7 +5,6 @@
 * Laravel → Web paneli, kullanıcı yönetimi, API, komut logları
 * Node.js → WebSocket sunucusu, düşük gecikmeli VNC aktarımı
 * Kotlin (Android Agent) → Ekran görüntüsü, komut çalıştırma, API & WS bağlantısı
-
 ---
 
 ## 1. SUNUCU KURULUMU
@@ -22,6 +21,7 @@
 * Domain + SSL ayarlanacak
 * Laravel proje dizini ayarlanacak
 * Node.js servisleri için reverse proxy yapılacak
+* Tailwindcss tasarım
 ---
 
 ## 2. LARAVEL (WEB PANELİ – BACKEND)
