@@ -145,8 +145,7 @@
 ---
 
 ## 8. PROJE SÜRESİ & MALİYET
-8.1. Ortalama Yapım Süresi
 
-Toplam geliştirme süresi: 20 – 30 iş günü
-Toplam maliyet: 200.000 TL
-Ödeme Planı : %50 başlangıç ödemesi - %50 proje tamamlandığında ödeme
+*Toplam geliştirme süresi: 20 – 30 iş günü
+*Toplam maliyet: 200.000 TL
+*Ödeme Planı : %50 başlangıç ödemesi - %50 proje tamamlandığında ödeme
