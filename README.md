@@ -1,4 +1,4 @@
-# VNC — Yapılacaklar Listesi
+# VNC
 
 ## 0. GENEL SİSTEM MİMARİSİ
 
@@ -10,31 +10,80 @@
 
 ## 1. SUNUCU KURULUMU
 
-– Ubuntu + Nginx + Laravel + Node.js
+### Seçenek A – Ubuntu + Nginx + Laravel + Node.js
 
 * Ubuntu güncellemesi yapılacak
 * Gerekli paketler kurulacak
 * Composer kurulacak
+* Laravel proje klasörü oluşturulacak
 * Node.js + PM2 kurulacak
-
 * CyberPanel kurulumu
+* PHP + Laravel gereksinimleri eklenecek
 * Domain + SSL ayarlanacak
 * Laravel proje dizini ayarlanacak
 * Node.js servisleri için reverse proxy yapılacak
-
-
 ---
 
 ## 2. LARAVEL (WEB PANELİ – BACKEND)
 
-* Proje kurulumu
+### 2.1. Proje Hazırlığı
+
+* Laravel kurulumu
+* Çevresel değişkenlerin ayarlanması (.env)
+* Migration ve seeder yapısının hazırlanması
+
+### 2.2. Authentication & Authorization
+
 * Admin Auth sistemi
-* Role-permission sistemi
-* REST API endpointlerinin tasarlanması
-* Komut kuyruğu sistemi
-* VNC entegrasyon uç noktalarının eklenmesi
-* Panel arayüz bileşenlerinin hazırlanması
-* Güvenlik yapılandırmaları (JWT, rate limit, CSRF)
+* Role / Permission yapısı oluşturma
+* Yetki bazlı erişim kontrolü
+* Admin panel erişim kuralları
+
+### 2.3. REST API Tasarımı
+
+#### API Rotaları
+
+* /api/device/register
+* /api/devices/list
+* /api/device/{id}
+* /api/device/{id}/commands
+* /api/device/{id}/logs
+* /api/vnc/start
+* /api/vnc/stop
+
+#### API Yapılması Gerekenler:
+
+* Request validation
+* JWT token kontrolü
+* Response şeması oluşturma (success/error formatı)
+
+### 2.4. Komut Kuyruğu Sistemi
+
+* device_commands tablosunun tasarımı
+* Pending → Executed akışının yazılması
+* Android Agent’ın polling veya push sistemi ile komut çekmesi
+
+### 2.5. VNC Yönetimi
+
+* Node.js WS sunucu URL’lerinin Laravel tarafından sağlanması
+* Cihaz bazlı VNC oturumu oluşturma
+* Session loglama
+
+### 2.6. Panel Arayüzü
+
+* Cihaz listesi sayfası
+* Cihaz detay sayfası
+* Canlı ekran izleme (VNC / canvas)
+* Komut gönderme paneli
+* SMS/Call log görüntüleme
+* Komut geçmişi listeleme
+
+### 2.7. Güvenlik
+
+* JWT token
+* API rate limit
+* CSRF kontrolü
+* IP güvenlik duvarı politikaları
 
 ---
 
@@ -94,3 +143,10 @@
 * Monitoring paneli kurulumu (CPU/RAM, cihaz online/offline, FPS izlemesi)
 
 ---
+
+## 8. PROJE SÜRESİ & MALİYET
+8.1. Ortalama Yapım Süresi
+
+Toplam geliştirme süresi: 20 – 30 iş günü
+Toplam maliyet: 200.000 TL
+Ödeme Planı : %50 başlangıç ödemesi - %50 proje tamamlandığında ödeme
